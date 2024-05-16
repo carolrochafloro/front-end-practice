@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  background-color: antiquewhite;
+  background-image: url('./pattern.svg');
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: darksalmon;
+}
+
+.display {
+  display: grid;
+  gap: 2em;
+  align-content: center;
+  justify-content: center;
+}
+
+button {
+  background-color: lightblue;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  max-width: 30%;
+  padding: 10px 20px;
+  justify-self: center;
+  transition: background-color 0.3s ease;
+}
+
+button:active {
+  background-color: rgb(89, 158, 181);
+}
+
+.escolha {
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+}
+
+.opcao {
+  padding: 10px 20px;
+  background-color: coral;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 1px solid salmon;
+  color: antiquewhite;
+  transition: background-color 0.3s ease;
+}
+
+.opcao:active {
+  background-color: rgb(229, 77, 22);
+}
+
+.final {
+  text-align: center;
+  font-size: 1.5em;
+  color: darksalmon;
+  font-weight: 600;
+}
