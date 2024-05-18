@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: antiquewhite;
-  background-image: url('./pattern.svg');
+  background-image: url('./img/pattern.svg');
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
