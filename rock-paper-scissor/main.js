@@ -1,50 +1,63 @@
 const opcoes = ['Papel', 'Pedra', 'Tesoura'];
-const divs = document.querySelectorAll('.opcao');
 let escolha;
-
-divs.forEach(function (div) {
-  div.addEventListener('click', function (event) {
-    escolha = this.textContent;
-    console.log(escolha);
-  });
-});
-
-let btn = document.querySelector('.jogar');
+let scoreUsuario = 0;
+let scoreMaquina = 0;
+const opcao = document.querySelectorAll('.opcao');
+const btn = document.querySelector('.jogar');
 const resultado = document.querySelector('.resultado');
 const mostrarEscolha = document.querySelector('.escolhaMaquina');
+const scoreFinal = document.querySelector('.scoreFinal');
+let resetar = document.querySelector('.reset');
+
+opcao.forEach(function (opcao) {
+  opcao.addEventListener('click', function () {
+    escolha = opcao.textContent;
+  });
+});
 
 function jogar() {
   let random = Math.floor(Math.random() * 3);
   let escolhaMaquina = opcoes[random];
 
-  console.log(escolhaMaquina);
-
   mostrarEscolha.innerHTML = `Sua escolha: ${escolha}<br>A máquina jogou: ${escolhaMaquina}`;
-  // empate
+
   if (escolhaMaquina == escolha) {
     resultado.textContent = 'Empate!';
   } else if (escolhaMaquina == opcoes[0]) {
-    /*se maquina escolhe papel*/ if (escolha == opcoes[1]) {
-      /*usuario escolhe pedra*/ resultado.textContent =
-        'Revolução das máquinas! O computador ganhou!';
-    } /*usuario escolhe tesoura*/ else {
+    if (escolha == opcoes[1]) {
+      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
+      scoreMaquina++;
+    } else {
       resultado.textContent = 'Você ganhou!';
+      scoreUsuario++;
     }
   } else if (escolhaMaquina == opcoes[1]) {
-    /*se maquina escolhe pedra*/ if (escolha == opcoes[2]) {
-      /*usuario escolhe tesoura*/ resultado.textContent =
-        'Revolução das máquinas! O computador ganhou!';
-    } /*usuario escolhe papel*/ else {
+    if (escolha == opcoes[2]) {
+      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
+      scoreMaquina++;
+    } else {
       resultado.textContent = 'Você ganhou!';
+      scoreUsuario++;
     }
-  } /*se maquina escolhe tesoura*/ else {
+  } else {
     if (escolha == opcoes[0]) {
-      /*usuario escolhe papel*/ resultado.textContent =
-        'Revolução das máquinas! O computador ganhou!';
-    } /*usuario escolhe pedra*/ else {
+      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
+      scoreMaquina++;
+    } else {
       resultado.textContent = 'Você ganhou!';
+      scoreUsuario++;
     }
   }
+  scoreFinal.textContent = `Máquina ${scoreMaquina} x ${scoreUsuario} Você`;
+}
+
+function resetarTela() {
+  mostrarEscolha.innerHTML = '';
+  resultado.innerHTML = '';
+  scoreMaquina = 0;
+  scoreUsuario = 0;
+  scoreFinal.textContent = '';
 }
 
 btn.addEventListener('click', jogar);
+resetar.addEventListener('click', resetarTela);

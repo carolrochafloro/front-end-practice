@@ -25,6 +25,12 @@ h1 {
   justify-content: center;
 }
 
+.escolha {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+}
+
 button {
   background-color: lightblue;
   border: none;
@@ -40,24 +46,8 @@ button:active {
   background-color: rgb(89, 158, 181);
 }
 
-.escolha {
-  display: flex;
-  gap: 3em;
-  justify-content: center;
-}
-
-.opcao {
-  padding: 10px 20px;
-  background-color: coral;
-  border-radius: 4px;
-  font-weight: bold;
-  border: 1px solid salmon;
-  color: antiquewhite;
-  transition: background-color 0.3s ease;
-}
-
-.opcao:active {
-  background-color: rgb(229, 77, 22);
+.reset {
+  max-width: fit-content;
 }
 
 .final {
