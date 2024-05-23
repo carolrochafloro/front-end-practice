@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
       isNaN(inputValue) ||
       inputUser == undefined
     ) {
-      response.innerHTML = '<p>Escolha um número entre 1 e 100</p>';
+      response.innerHTML = '<p>O número precisa ser entre 1 e 100</p>';
+      response.style.setProperty('color', 'red');
       return;
     }
     inputUser = inputValue;
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function resetAll() {
   inputUser = 16;
   response.innerHTML = '<p>Escolha um número entre 1 e 100';
+  response.style.setProperty('color', 'darkblue');
   createFrames(inputUser);
 }
 
