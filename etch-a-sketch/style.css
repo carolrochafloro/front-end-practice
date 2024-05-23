@@ -51,6 +51,7 @@ button {
   border: none;
   box-shadow: 1px 1px 3px 0.5px gray;
   font-weight: bold;
+  border-radius: 4px;
 }
 .submit {
   width: 5em;
