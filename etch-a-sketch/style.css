@@ -10,6 +10,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: rgb(212, 234, 253);
+  font-family: Arial, Helvetica, sans-serif;
 }
 .board {
   flex-direction: column;
@@ -18,7 +19,7 @@ body {
   position: relative;
   width: 30vw;
   height: 30vw;
-  margin-top: 8vh;
+  margin-top: 6vh;
   border: 1em solid salmon;
   border-radius: 4px;
 }
@@ -39,10 +40,14 @@ body {
 input[type='number'] {
   border-radius: 4px;
   border: 1px solid lightblue;
+  width: 8em;
+  height: 2em;
+  justify-self: center;
 }
 
 .response {
-  color: red;
+  font-weight: bold;
+  color: darkblue;
 }
 
 button {
@@ -61,4 +66,5 @@ button {
 
 .reset {
   background-color: bisque;
+  color: darkblue;
 }

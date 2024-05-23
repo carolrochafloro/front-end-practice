@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function resetAll() {
   inputUser = 16;
-  response.innerHTML = '';
+  response.innerHTML = '<p>Escolha um número entre 1 e 100';
   createFrames(inputUser);
 }
 
