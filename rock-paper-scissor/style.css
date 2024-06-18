@@ -1,3 +1,7 @@
+:root {
+  --gap-space: 2rem;
+}
+
 body {
   margin: 0;
   background-color: antiquewhite;
@@ -20,14 +24,13 @@ h1 {
 
 .display {
   display: grid;
-  gap: 2em;
-  align-content: center;
-  justify-content: center;
+  gap: var(--gap-space);
+  place-items: center;
 }
 
-.escolha {
+.choice {
   display: flex;
-  gap: 2em;
+  gap: var(--gap-space);
   justify-content: center;
 }
 

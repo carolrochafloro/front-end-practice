@@ -1,63 +1,49 @@
-const opcoes = ['Papel', 'Pedra', 'Tesoura'];
-let escolha;
-let scoreUsuario = 0;
-let scoreMaquina = 0;
-const opcao = document.querySelectorAll('.opcao');
-const btn = document.querySelector('.jogar');
-const resultado = document.querySelector('.resultado');
-const mostrarEscolha = document.querySelector('.escolhaMaquina');
-const scoreFinal = document.querySelector('.scoreFinal');
-let resetar = document.querySelector('.reset');
+const options = ['Papel', 'Pedra', 'Tesoura'];
+let choice;
+let userScore = 0;
+let machineScore = 0;
+const option = document.querySelectorAll('.option');
+const btn = document.querySelector('.play');
+const result = document.querySelector('.result');
+const showChoice = document.querySelector('.machineChoice');
+const finalScore = document.querySelector('.finalScore');
+let reset = document.querySelector('.reset');
 
-opcao.forEach(function (opcao) {
-  opcao.addEventListener('click', function () {
-    escolha = opcao.textContent;
+option.forEach(function (option) {
+  option.addEventListener('click', function () {
+    choice = option.textContent;
   });
 });
 
-function jogar() {
+function play() {
   let random = Math.floor(Math.random() * 3);
-  let escolhaMaquina = opcoes[random];
+  let machineChoice = options[random];
 
-  mostrarEscolha.innerHTML = `Sua escolha: ${escolha}<br>A máquina jogou: ${escolhaMaquina}`;
+  showChoice.innerHTML = `Sua escolha: ${choice}<br>A máquina jogou: ${machineChoice}`;
 
-  if (escolhaMaquina == escolha) {
-    resultado.textContent = 'Empate!';
-  } else if (escolhaMaquina == opcoes[0]) {
-    if (escolha == opcoes[1]) {
-      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
-      scoreMaquina++;
-    } else {
-      resultado.textContent = 'Você ganhou!';
-      scoreUsuario++;
-    }
-  } else if (escolhaMaquina == opcoes[1]) {
-    if (escolha == opcoes[2]) {
-      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
-      scoreMaquina++;
-    } else {
-      resultado.textContent = 'Você ganhou!';
-      scoreUsuario++;
-    }
+  if (machineChoice === choice) {
+    result.textContent = 'Empate!';
+  } else if (
+    (machineChoice === options[0] && choice === options[1]) ||
+    (machineChoice === options[1] && choice === options[2]) ||
+    (machineChoice === options[2] && choice === options[0])
+  ) {
+    result.textContent = 'Revolução das máquinas! O computador ganhou!';
+    machineScore++;
   } else {
-    if (escolha == opcoes[0]) {
-      resultado.textContent = 'Revolução das máquinas! O computador ganhou!';
-      scoreMaquina++;
-    } else {
-      resultado.textContent = 'Você ganhou!';
-      scoreUsuario++;
-    }
+    result.textContent = 'Você ganhou!';
+    userScore++;
   }
-  scoreFinal.textContent = `Máquina ${scoreMaquina} x ${scoreUsuario} Você`;
+  finalScore.textContent = `Máquina ${machineScore} x ${userScore} Você`;
 }
 
-function resetarTela() {
-  mostrarEscolha.innerHTML = '';
-  resultado.innerHTML = '';
-  scoreMaquina = 0;
-  scoreUsuario = 0;
-  scoreFinal.textContent = '';
+function resetDisplay() {
+  showChoice.innerHTML = '';
+  result.innerHTML = '';
+  machineScore = 0;
+  userScore = 0;
+  finalScore.textContent = '';
 }
 
-btn.addEventListener('click', jogar);
-resetar.addEventListener('click', resetarTela);
+btn.addEventListener('click', play);
+reset.addEventListener('click', resetDisplay);

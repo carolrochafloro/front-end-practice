@@ -1,0 +1,48 @@
+body {
+  background: repeating-linear-gradient(
+    to right,
+    rgb(255, 184, 189),
+    rgb(255, 184, 189) 10px,
+    rgb(255, 212, 215) 10px,
+    rgb(255, 212, 215) 20px
+  );
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 3em;
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-self: center;
+  color: rgb(1, 58, 108);
+}
+
+.time {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 0px;
+  color: rgb(255, 79, 91);
+  justify-self: center;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(3, 6em);
+  justify-self: center;
+}
+
+button {
+  padding: 0.3em;
+  font-weight: bolder;
+  color: rgb(1, 58, 108);
+  border: 1px solid rgb(1, 58, 108);
+  background-color: aliceblue;
+}
